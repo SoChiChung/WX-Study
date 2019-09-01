@@ -4,9 +4,10 @@
     <button open-type="getUserInfo" wx-if="{{isShow}}" bindgetuserinfo="getUserInfoHandle">
         获取用户信息
     </button>
-      
-    <text class="userName" selectable="false" space="false" decode="false">hello {{userInfo.nickName}}</text>
-    <view class="goStudy" hover-class="none" hover-stop-propagation="false" bindtap='handleParent'>
-        <text bind:tap='handleChildren'>开启小程序之旅</text>
+    <text class="userName" selectable="false" space="false" decode="false">
+        hello {{userInfo.nickName}}
+    </text>
+    <view class="goStudy" hover-class="none" hover-stop-propagation="false" bindtap='routeToList'>
+        <text bind:tap='handleChildren' bind:tap='routeToList'>开启小程序之旅</text>
     </view>
 </view>

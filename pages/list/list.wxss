@@ -1,0 +1,5 @@
+/* pages/list/list.wxss */
+newsSummary{
+    margin: 0 10 rpx;
+    border: 2rpx solid black
+}
