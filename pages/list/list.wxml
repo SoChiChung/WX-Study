@@ -1,0 +1,6 @@
+<!--pages/list/list.wxml-->
+<view class="" hover-class="none" hover-stop-propagation="false">
+<view wx:for="{{datalist}}" wx:key="{{index}}">
+    <newsSummary news="{{item}}"></newsSummary>
+</view>
+</view>

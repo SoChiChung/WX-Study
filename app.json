@@ -1,0 +1,12 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/list/list"
+    ],
+    "window": {
+        "navigationBarTitleText": "Demo",
+        "navigationBarBackgroundColor": "#8ED145",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json"
+}

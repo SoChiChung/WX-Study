@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "newsSummary":"/components/newsSummary/newsSummary"
+  },
+  "navigationBarBackgroundColor": "#489B81",
+  "navigationBarTitleText": "体育头条",
+  "navigationBarTextStyle": "white"
+}

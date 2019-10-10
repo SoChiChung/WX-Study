@@ -1,0 +1,21 @@
+/* components/newsSummary/newsSummary.wxss */
+.title{
+    font-weight: bold;
+    font-size:40rpx;
+    color:red;
+    margin:0 10rpx
+}
+
+.ref{
+    display:flex;
+    justify-content: space-around
+}
+.ref>text{
+    font-size: 30rpx
+}
+.pageView{
+    text-align: center;
+}
+.news_pic{
+    margin-top:20rpx
+}
