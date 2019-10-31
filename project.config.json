@@ -20,7 +20,7 @@
 			"outputPath": ""
 		}
 	},
-	"compileType": "miniprogram",
+	"compileType": "plugin",
 	"libVersion": "2.8.1",
 	"appid": "wxb3752a0a116b5276",
 	"projectname": "program-study",
