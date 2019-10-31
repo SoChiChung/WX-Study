@@ -1,0 +1,13 @@
+<!-- pages/index/index.wxml -->
+<view class="indexContainer" hover-class="none" hover-stop-propagation="false">
+  <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+  <button open-type="getUserInfo" wx-if="{{isShow}}" bindgetuserinfo="getUserInfoHandle">
+    点击登录
+  </button>
+  <text wx-if="{{!isShow}}" class="userName" selectable="false" space="false" decode="false">
+        hello {{userInfo.nickName}}
+    </text>
+  <view class="goStudy" hover-class="none" hover-stop-propagation="false" bindtap='routeToList'>
+    <text wx-if="{{!isShow}}">开始浏览菜谱</text>
+  </view>
+</view>

@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/userinfo/userinfo",
     "pages/list/list",
     "pages/total/total",
     "pages/category/category"
@@ -29,7 +30,7 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/userinfo/userinfo",
         "iconPath": "images/tab/homework01/user.png",
         "selectedIconPath": "images/tab/homework01/user_selected.png",
         "text": "我的"

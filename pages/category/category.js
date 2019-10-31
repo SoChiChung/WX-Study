@@ -7,12 +7,11 @@ Page({
     curIndex: 0
   },
   onLoad: function () {
-    let data=require('../../data/categorydata.js')
+    let {resdata}=require('../../data/categorydata.js')
     this.setData({
-      navLeftItems:data,
-      navRightItems:data
+      navLeftItems:resdata,
+      navRightItems:resdata
     })
-    console.log(data)
   },
 
   //事件处理函数  

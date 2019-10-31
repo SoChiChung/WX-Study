@@ -1,13 +1,2 @@
-<!-- pages/index/index.wxml -->
-<view class="indexContainer" hover-class="none" hover-stop-propagation="false">
-    <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
-    <button open-type="getUserInfo" wx-if="{{isShow}}" bindgetuserinfo="getUserInfoHandle">
-        获取用户信息
-    </button>
-    <text class="userName" selectable="false" space="false" decode="false">
-        hello {{userInfo.nickName}}
-    </text>
-    <view class="goStudy" hover-class="none" hover-stop-propagation="false" bindtap='routeToList'>
-        <text bind:tap='handleChildren' bind:tap='routeToList'>开启小程序之旅</text>
-    </view>
-</view>
+<!--pages/index/index.wxml-->
+<text>pages/index/index.wxml</text>
