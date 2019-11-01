@@ -4,7 +4,8 @@
     "pages/userinfo/userinfo",
     "pages/list/list",
     "pages/total/total",
-    "pages/category/category"
+    "pages/category/category",
+    "components/meishilist/meishilist"
   ],
   "window": {
     "navigationBarTitleText": "Demo",

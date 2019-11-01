@@ -1,0 +1,4 @@
+<!--components/meishilist/meishilist.wxml-->
+  <view wx:for="{{datalist}}" wx:key="{{index}}">
+  <text>{{item.}}</text>
+  </view>

@@ -23,7 +23,7 @@
                 <image src="{{item.tree.logo}}"></image>
               </block> -->
               <block >
-                <image src="../../images/slidebarpic/none.jpg"></image>
+                <image src="../../images/slidebarpic/none.png"></image>
               </block>
             </view>
             <!--如果有文字，就用文字；无文字就用其他-->
