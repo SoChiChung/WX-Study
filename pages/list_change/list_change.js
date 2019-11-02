@@ -1,13 +1,12 @@
-// pages/index/index.js
+// pages/list/list.js
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        categories: []
+        datalist: [],
     },
-
     /**
      * 生命周期函数--监听页面加载
      */
@@ -15,17 +14,25 @@ Page({
         let {
             recipes
         } = require('../../data/meishijsontree.js');
-        this.setData({
-            categories: recipes
+        
+        //获取传入参数
+        var that = this;
+        wx.showToast({
+            title: '加载中',
+            icon: 'loading',
+            duration: 2000
         })
-        console.log(this.data.categories)
+        let index = options.categoryid;
+        this.setData({
+            datalist:recipes[index].children
+        })
+        console.log(this.data.datalist)
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-
     },
 
     /**
@@ -68,8 +75,5 @@ Page({
      */
     onShareAppMessage: function() {
 
-    },
-    jump(){
-        console.log('1')
     }
 })

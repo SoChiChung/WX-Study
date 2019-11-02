@@ -1,6 +1,4 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "分类列表",
-  "navigationBarBackgroundColor": "#8ED145",
-  "navigationBarTextStyle": "black"
+  "navigationBarTitleText": "分类列表"
 }

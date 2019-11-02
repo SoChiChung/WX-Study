@@ -1,4 +1,7 @@
 <!--components/meishilist/meishilist.wxml-->
-  <view wx:for="{{datalist}}" wx:key="{{index}}">
-  <text>{{item.}}</text>
-  </view>
+<view wx:for="{{datalist}}" wx:if="{{index>0}}" wx:key="{{index}}" class="container">
+    <text class="title">{{item.name}}</text>
+    <hr/>
+    <image src="{{item.children[3].img_url}}" bindtap="jumpto" data-variable="{{item.id}}"></image>
+    <text class="info">简介</text>
+</view>

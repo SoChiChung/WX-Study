@@ -1,6 +1,11 @@
 <!--pages/index/index.wxml-->
 <!-- swiper -->
 <!-- 分类推荐 -->
-  <view wx:for="{{categories}}" wx:key="{{id}}">
-    <text>{{item.id}}</text>
-  </view>
+<view>
+    <swiper autoplay="true" indicator-dots="true">
+        <swiper-item wx:for="{{[1,2,3]}}" class="my-slide">
+            <image lazy-load="true"   src="../../images/slidebarpic/lunbo0{{item}}.jpg"></image>
+        </swiper-item>
+    </swiper>
+    <meishilist datalist="{{categories}}"></meishilist>
+</view>

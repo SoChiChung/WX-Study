@@ -1,4 +1,4 @@
-/* components/meishilist/meishilist.wxss */
+/* pages/list/list.wxss */
 view{
     text-align: center;
     margin:2rpx 5rpx;

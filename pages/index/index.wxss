@@ -1,1 +1,9 @@
 /* pages/index/index.wxss */
+html body  {
+    margin: 0;
+    padding: 0
+}
+.my-slide image{
+    height: 281.25rpx;
+    width: 750rpx
+}

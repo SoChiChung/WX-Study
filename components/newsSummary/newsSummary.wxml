@@ -1,14 +1,15 @@
 <!--components/newsSummary/newsSummary.wxml-->
 <view class="pageView">
-    <text class="title">{{news.title}}</text>
-    <image lazy-load="{{true}}" src="{{news.thumbnail_pic_s}}" class="news_pic">
+    <text class="title">{{news.name}}</text>
+    <image lazy-load="{{true}}" src="{{news.img_url}}" class="news_pic">
     </image>
+    <!-- <image src="../../images/slidebarpic/none.png"></image> -->
     <view class="ref">
         <text>
-            作者：{{news.author_name}}
+            作者：{{news.author}}
         </text>
         <text>
-            发布日期：{{news.date}}
+            类别：{{news.category_name}}
         </text>
           
     </view>
