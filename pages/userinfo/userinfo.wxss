@@ -1,7 +1,7 @@
 /* pages/index/index.wxss */
 page {
     height: 100%;
-    background: #8ED145;
+    background: #AF0809;
 }
 
 .indexContainer {

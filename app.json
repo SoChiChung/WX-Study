@@ -8,7 +8,7 @@
     "components/meishilist/meishilist"
   ],
   "window": {
-    "navigationBarTitleText": "Demo",
+    "navigationBarTitleText": "课程作业",
     "navigationBarBackgroundColor": "#AF0809",
     "navigationBarTextStyle": "white"
   },

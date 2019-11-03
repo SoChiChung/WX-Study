@@ -57,8 +57,9 @@ Page({
     routeToList(){//跳转到list页面
         //wx.navigateTo 保留当前页面 跳转到list
         //wx.redirectTo 销毁当前页面 跳转到list
-        wx.navigateTo({
-            url: '/pages/list/list',
+        console.log('跳了')
+        wx.switchTab({
+            url: '../index/index',
         });
     },
     /**

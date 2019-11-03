@@ -1,8 +1,18 @@
 /* pages/list/list.wxss */
-view{
+
+.list-container {
     text-align: center;
-    margin:2rpx 5rpx;
+    margin: 20rpx 5rpx;
 }
-view text{
-    display: block
+
+.list-container text {
+    display: block;
+}
+.list-container image{
+    padding:20rpx 0
+}
+.list-title {
+    font-size: 40rpx;
+    color: red;
+    font-weight: 400;
 }

@@ -1,8 +1,37 @@
 /* components/meishilist/meishilist.wxss */
-view{
+
+.container {
     text-align: center;
-    margin:2rpx 5rpx;
+    margin: 20rpx 16rpx;
 }
-view text{
-    display: block
+
+.container text {
+    display: block;
+}
+
+.img_url {
+    margin: 20rpx 0;
+}
+
+.title {
+    font-size: 36rpx;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    line-height: 32rpx;
+    text-align: left;
+    padding-bottom: 16rpx;
+}
+
+.info {
+    font-size: 24rpx;
+    font-weight: 400;
+    color: rgba(153, 153, 153, 1);
+    line-height: 32rpx;
+}
+
+.line {
+    margin: 0 auto;
+    width: 100%;
+    height: 2rpx;
+    background-color: #d8d8d8;
 }

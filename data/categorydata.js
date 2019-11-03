@@ -24,7 +24,7 @@ var resdata=[
                   "id": 16,
                   "tree": {
                     "id": 16,
-                    "desc": "花王",
+                    "desc": "牛排",
                     "desc2": "Merries",
                     "level": "level3",
                     "logo": "http://image.huanqiuxiaozhen.com/%E5%93%81%E7%89%8Clogo%2F%E7%BA%B8%E5%B0%BF%E8%A3%A4%2F%E8%8A%B1%E7%8E%8B.jpg",
@@ -36,7 +36,7 @@ var resdata=[
                   "id": 17,
                   "tree": {
                     "id": 17,
-                    "desc": "大王",
+                    "desc": "猪排",
                     "desc2": "Goon",
                     "level": "level3",
                     "logo": "http://image.huanqiuxiaozhen.com/%E5%93%81%E7%89%8Clogo%2F%E7%BA%B8%E5%B0%BF%E8%A3%A4%2F%E5%A4%A7%E7%8E%8B.jpg",
@@ -48,7 +48,7 @@ var resdata=[
                   "id": 18,
                   "tree": {
                     "id": 18,
-                    "desc": "尤妮佳",
+                    "desc": "羊排",
                     "desc2": "Moony",
                     "level": "level3",
                     "logo": "http://image.huanqiuxiaozhen.com/%E5%93%81%E7%89%8Clogo%2F%E7%BA%B8%E5%B0%BF%E8%A3%A4%2F%E5%B0%A4%E4%BD%B3%E5%A6%AE.jpg",

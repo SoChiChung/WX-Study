@@ -1,11 +1,11 @@
 <!--pages/list/list.wxml-->
 <view class="" hover-class="none" hover-stop-propagation="false">
-  <view wx:for="{{datalist}}" wx:key="{{index}}">
+  <view wx:for="{{datalist}}" wx:key="{{index}}" class="list-container">
     <!-- <newsSummary news="{{item}}"></newsSummary> -->
-    <text class="title">{{item.name}}</text>
+    <text class="list-title">{{item.name}}</text>
     <hr/>
     <image src="{{item.img_url}}"></image>
-    <text class="info">作者：{{item.author}}</text>
+    <text class="list-author">作者：{{item.author}}</text>
 
   </view>
 </view>
