@@ -23,17 +23,31 @@ Page({
     tapID: 201701, // 判断是否选中
     contentNewsList: [],
     showCopyright: false,
-    refreshing: false
+    refreshing: false,
+    inputShowed: false,
+    inputVal: "",
   },
-
   onLoad: function() {
+    this.setData({
+      search: this.search.bind(this)
+  })
     this.renderPage('top', false, () => {
       this.setData({
         showCopyright: true
       })
     })
   },
-
+  //搜索
+  search: function (value) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve([{text: '搜索结果', value: 1}, {text: '搜索结果2', value: 2}])
+        }, 200)
+    })
+},
+  selectResult: function (e) {
+    console.log('select result', e.detail)
+},
   // headerBar 点击
   headerTitleClick: function(e) {
     this.setData({ tapID: e.target.dataset.id })

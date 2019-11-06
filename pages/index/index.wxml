@@ -1,5 +1,11 @@
 <!-- index.wxml -->
 <view class='index'>
+  <!-- 搜索框 -->
+  <view class="page">
+    <view class="page__bd">
+      <mp-searchbar bindselectresult="selectResult" search="{{search}}"></mp-searchbar>
+    </view>
+  </view>
   <view class='header'>
     <view class='header-panel one-px-border'>
       <block wx:for='{{headerTitleName}}' wx:key='{{item.nameID}}'>
@@ -9,7 +15,7 @@
       </block>
     </view>
   </view>
-  <view class="nav-blank"></view>
+  <!-- <view class="nav-blank"></view> -->
   <scroll-view-refresh-load class='scroll-view-refresh-load-component' refreshing="{{refreshing}}" bindpulldownrefresh="onPulldownrefresh_SV">
     <view class='content'>
       <view class='content-top-pic'>

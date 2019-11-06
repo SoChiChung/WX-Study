@@ -1,4 +1,9 @@
 /**app.wxss**/
+
+
+/* 引入weui样式 */
+@import './miniprogram_npm/weui-miniprogram/weui-wxss/dist/style/weui.wxss';
+
 .one-px-border::after {
   position: absolute;
   bottom: 0;
@@ -8,12 +13,16 @@
   content: '';
   background-color: #f0f0f0;
 }
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 2dppx) {
   .one-px-border ::after {
     transform: scaleY(0.5);
   }
 }
-@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 3dppx) {
+
+@media (-webkit-min-device-pixel-ratio: 3),
+(min-resolution: 3dppx) {
   .one-px-border ::after {
     transform: scaleY(0.333);
   }

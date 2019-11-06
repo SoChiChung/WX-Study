@@ -1,0 +1,22 @@
+{
+  "name": "toutiaonews",
+  "version": "1.0.0",
+  "description": "[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)\r [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FKuangPF%2FwxAPP_toutiaoNews.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FKuangPF%2FwxAPP_toutiaoNews?ref=badge_shield)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SoChiChung/WX-Study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SoChiChung/WX-Study/issues"
+  },
+  "homepage": "https://github.com/SoChiChung/WX-Study#readme",
+  "dependencies": {
+    "weui-miniprogram": "^0.2.0"
+  }
+}
