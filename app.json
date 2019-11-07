@@ -10,7 +10,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "Coder News",
+        "navigationBarTitleText": "洋葱新闻",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {

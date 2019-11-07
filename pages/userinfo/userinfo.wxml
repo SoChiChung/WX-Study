@@ -16,16 +16,16 @@
   <mp-cell link hover value="清除缓存" link url="/pages/index/index">
     <image slot="title" src="/images/userinfo/account_setting.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
   </mp-cell>
-  <mp-cell link hover value="字体大小">
+  <mp-cell link hover value="字体大小" footer="中">
     <image slot="title" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;" src="/images/userinfo/edit_info.png"></image>
   </mp-cell>
   <mp-cell link hover value="列表摘要显示">
     <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
   </mp-cell>
-  <mp-cell link hover value="非WIFI网络流量">
+  <mp-cell link hover value="非WIFI网络流量" footer="最佳效果（下载大图）">
     <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
   </mp-cell>
-  <mp-cell link hover value="非WIFI网络播放速度">
+  <mp-cell link hover value="非WIFI网络播放速度" footer="提醒一次">
     <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
   </mp-cell>
   <mp-cell value="推送通知">
@@ -34,53 +34,11 @@
   </mp-cell>
 </mp-cells>
 
-
-<!-- demo !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
-<mp-cells ext-class="my-cells " title="带说明的列表项 ">
-  <mp-cell value="标题文字 " foot="test "></mp-cell>
-  <mp-cell>
-    <view>标题文字（使用slot）</view>
-    <view slot="foot "></view>
+<mp-cells title="   ">
+  <mp-cell value="离线下载">
+    <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+  </mp-cell>
+  <mp-cell value="检查版本" footer="6.0.0">
   </mp-cell>
 </mp-cells>
-<view class="page ">
-  <!-- <view class="page__hd ">
-    <view class="page__title ">Cell</view>
-    <view class="page__desc ">列表</view>
-  </view> -->
-  <view class="page__bd ">
-    <mp-cells ext-class="my-cells " title="带说明的列表项 ">
-      <mp-cell value="标题文字 " footer="说明文字 "></mp-cell>
-      <mp-cell>
-        <view>标题文字（使用slot）</view>
-        <view slot="footer ">说明文字</view>
-      </mp-cell>
-      <mp-slideview buttons="{{slideButtons}} " bindbuttontap="slideButtonTap ">
-        <mp-cell value="左滑可以删除 " footer="说明文字 "></mp-cell>
-      </mp-slideview>
-    </mp-cells>
-
-    <mp-cells title="带图标、说明的列表项 " footer="底部说明文字 ">
-      <mp-cell value="标题文字 " footer="说明文字 ">
-        <image slot="icon " style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px; "></image>
-      </mp-cell>
-      <mp-cell value="标题文字 " footer="说明文字 ">
-        <image slot="icon " style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px; "></image>
-      </mp-cell>
-    </mp-cells>
-
-    <mp-cells title="带跳转的列表项 ">
-      <mp-cell link hover value="有hover效果 " footer="说明文字 ">
-        <image slot="title " style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px; "></image>
-      </mp-cell>
-      <mp-cell link value="无hover效果 " footer="说明文字 ">
-        <image slot="icon " style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px; "></image>
-      </mp-cell>
-      <mp-cell link url="../index " value="无hover效果，带跳转URL " footer="说明文字 ">
-        <image slot="icon " style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px; "></image>
-      </mp-cell>
-    </mp-cells>
-
-  </view>
-</view>
 <image src="/images/e_sports/uzi.jpg "></image>
