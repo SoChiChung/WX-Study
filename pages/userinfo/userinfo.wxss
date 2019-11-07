@@ -1,1 +1,5 @@
 /* pages/userinfo/userinfo.wxss */
+page
+{
+  background-color: rgba(247, 249, 252, 1)
+}
