@@ -3,7 +3,8 @@ Page({
   data: {
     inputShowed: false,
     inputVal: "",
-    switchchecked: true
+    switch1checked: true,
+    switch2Checked:false
   },
   onLoad() {
     this.setData({

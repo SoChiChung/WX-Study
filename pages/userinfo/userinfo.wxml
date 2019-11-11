@@ -2,43 +2,44 @@
 
 <mp-cells>
   <mp-cell link hover value="编辑资料" link url="/pages/index/index">
-    <image slot="title" src="/images/userinfo/account_setting.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <image slot="title" src="/images/userinfo/account_setting.png"></image>
   </mp-cell>
   <mp-cell link hover value="账号和绑定设置">
-    <image slot="title" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;" src="/images/userinfo/edit_info.png"></image>
+    <image slot="title" src="/images/userinfo/edit_info.png"></image>
   </mp-cell>
   <mp-cell link hover value="黑名单">
-    <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <image slot="title" src="/images/userinfo/blockedlist.png"></image>
   </mp-cell>
 </mp-cells>
 
 <mp-cells title="   ">
   <mp-cell link hover value="清除缓存" link url="/pages/index/index">
-    <image slot="title" src="/images/userinfo/account_setting.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <image slot="title" src="/images/userinfo/clear_storage.png"></image>
   </mp-cell>
   <mp-cell link hover value="字体大小" footer="中">
-    <image slot="title" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;" src="/images/userinfo/edit_info.png"></image>
+    <image slot="title" src="/images/userinfo/font_size.png"></image>
   </mp-cell>
-  <mp-cell link hover value="列表摘要显示">
-    <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+  <mp-cell value="列表摘要显示">
+    <image slot="title" src="/images/userinfo/showlist.png"></image>
+    <switch slot="footer" checked="{{switch2Checked}}" />
   </mp-cell>
   <mp-cell link hover value="非WIFI网络流量" footer="最佳效果（下载大图）">
-    <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <image slot="title" src="/images/userinfo/flow.png"></image>
   </mp-cell>
   <mp-cell link hover value="非WIFI网络播放速度" footer="提醒一次">
-    <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <image slot="title" src="/images/userinfo/play.png"></image>
   </mp-cell>
   <mp-cell value="推送通知">
-    <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <image slot="title" src="/images/userinfo/tweet.png"></image>
     <switch slot="footer" checked="{{switch1Checked}}" />
   </mp-cell>
 </mp-cells>
 
 <mp-cells title="   ">
   <mp-cell value="离线下载">
-    <image slot="title" src="/images/userinfo/blockedlist.png" style="margin-right: 16px;vertical-align: middle;width:20px; height: 20px;"></image>
+    <image slot="title" src="/images/userinfo/download.png"></image>
   </mp-cell>
   <mp-cell value="检查版本" footer="6.0.0">
+    <image slot="title" src="/images/userinfo/check_version.png"></image>
   </mp-cell>
 </mp-cells>
-<image src="/images/e_sports/uzi.jpg "></image>
