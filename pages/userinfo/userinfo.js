@@ -4,14 +4,14 @@ Page({
     inputShowed: false,
     inputVal: "",
     switch1checked: true,
-    switch2Checked:false
+    switch2Checked: false
   },
   onLoad() {
     this.setData({
       search: this.search.bind(this)
     })
   },
-  
+
   /* 搜索 */
   search: function(value) {
     return new Promise((resolve, reject) => {
@@ -29,4 +29,9 @@ Page({
   selectResult: function(e) {
     console.log('select result', e.detail)
   },
+  jumptoaccount_setting: function() {
+    wx.navigateTo({
+      url: '/pages/account_setting/account_setting'
+    })
+  }
 });

@@ -1,9 +1,12 @@
 <!-- pages/userinfo/userinfo.wxml -->
 
 <mp-cells>
-  <mp-cell link hover value="编辑资料" link url="/pages/index/index">
-    <image slot="title" src="/images/userinfo/account_setting.png"></image>
-  </mp-cell>
+  <navigator url='/pages/account-setting/account-setting'>
+    <mp-cell hover link>
+      <image slot="title" src="/images/userinfo/account_setting.png"></image>
+      <text>编辑资料</text>
+    </mp-cell>
+  </navigator>
   <mp-cell link hover value="账号和绑定设置">
     <image slot="title" src="/images/userinfo/edit_info.png"></image>
   </mp-cell>

@@ -21,7 +21,7 @@
 		"bundle": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
+	"libVersion": "2.9.3",
 	"appid": "wxb3752a0a116b5276",
 	"projectname": "toutiaoNews",
 	"simulatorType": "wechat",

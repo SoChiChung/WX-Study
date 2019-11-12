@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/account-setting/account-setting",
     "pages/index/index",
     "pages/logs/logs",
     "pages/detail/detail",
     "pages/webview/webview",
     "pages/demo/demo",
+    "pages/account-setting/account-setting",
     "pages/userinfo/userinfo"
   ],
   "window": {

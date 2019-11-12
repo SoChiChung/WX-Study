@@ -7,6 +7,7 @@
     <text slot="footer">{{userInfo.nickName?userInfo.nickName:'待完善'}}</text>
   </mp-cell>
   <mp-cell link hover value="介绍">
+  <text slot="footer" bindtap="test">{{userInfo.intro?userInfo.intro:'待完善'}}</text>
   </mp-cell>
 </mp-cells>
 <mp-cells title="   ">
@@ -14,12 +15,13 @@
     <text slot="footer">{{userInfo.gender==1?'男':'女'}}</text>
   </mp-cell>
   <mp-cell link hover value="生日">
-    <text slot="footer">{{userInfo.birth?'userInfo.birth':'待完善'}}</text>
+    <picker slot='footer' mode="date"  start="2015-09-01" end="{{date}}" bindchange="bindDateChange">
+      <view class="picker">
+        {{userInfo.birth?userInfo.birth:'待完善'}}
+      </view>
+    </picker>
   </mp-cell>
   <mp-cell value="地区" link hover>
-    <text slot="footer">{{userInfo.city?userInfo.city:'待完善'}}</text>
+    <text slot="footer">{{userInfo.country?userInfo.country:'待完善'}}</text>
   </mp-cell>
 </mp-cells>
-
-<!-- picker -->
-<picker wx:show="{}" mode='date'></picker>
