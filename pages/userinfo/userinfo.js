@@ -26,12 +26,9 @@ Page({
       }, 200)
     })
   },
-  selectResult: function(e) {
-    console.log('select result', e.detail)
-  },
   jumptoaccount_setting: function() {
     wx.navigateTo({
       url: '/pages/account_setting/account_setting'
     })
-  }
+  },
 });
