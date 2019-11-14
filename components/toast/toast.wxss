@@ -1,0 +1,23 @@
+/* components/toast/toast.wxss */
+.toast {
+  width: 500rpx;
+  height: 300rpx;
+  border: 2rpx solid black;
+  border-radius: 8%;
+  margin: 0 auto;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  margin-top: -150rpx;
+  z-index: 1000;
+  left: 50%;
+  margin-left: -250rpx;
+}
+.background {
+  background-color: #000000;
+  opacity: 0.7;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+}

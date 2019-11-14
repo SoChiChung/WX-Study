@@ -47,8 +47,8 @@ Page({
       timeout: 10000,
       success: data => {
         this.setData({
-          userInfo: data.userInfo,
-          isLogin: this.$route.params
+          userInfo: JSON.parse(data.rawData),
+          isLogin: true
         });
       },
       fail: err => {
@@ -58,7 +58,7 @@ Page({
       complete: () => {}
     });
   },
-  async getUserInfo() {
+  getUserInfo() {
     //获取用户信息
     //先找storage
     /*      wx.getStorageSync({
@@ -80,11 +80,16 @@ Page({
           }
         }); */
     let userInfo = wx.getStorageSync("userInfo") || [];
-    if (userInfo.length == 0) this.getWXinfo();
-    else {
+    if (userInfo.length == 0) {
+      this.setData({
+        isLogin: false
+      })
+      this.getWXinfo()
+    } else {
       userInfo = JSON.parse(userInfo);
       this.setData({
-        userInfo: userInfo
+        userInfo: userInfo,
+        isLogin: true
       });
     }
   },
@@ -98,7 +103,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function() {
     this.getUserSetting();
     this.getUserInfo();
   },
@@ -119,14 +124,23 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    wx.setStorage("userInfo", JSON.stringify(this.data.userInfo));
+    console.log('onHide')
+    wx.setStorage({
+      key: "userInfo",
+      data: JSON.stringify(this.data.userInfo)
+    })
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-    wx.setStorage("userInfo", JSON.stringify(this.data.userInfo));
+    console.log('onUnload')
+    /* wx.setStorage("userInfo", JSON.stringify(this.data.userInfo)); */
+    wx.setStorage({
+      key: "userInfo",
+      data: JSON.stringify(this.data.userInfo)
+    })
   },
 
   /**

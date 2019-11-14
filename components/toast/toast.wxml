@@ -1,0 +1,7 @@
+<!-- components/toast/toast.wxml -->
+<block>
+    <view class="toast">
+        <slot name="container"></slot>
+    </view>
+    <view class="background"></view>
+</block>
