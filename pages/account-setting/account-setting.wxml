@@ -1,5 +1,8 @@
 <!-- pages/account-setting/account-setting.wxml -->
-<toast></toast>
+<toast>
+  <toast-input slot="container"></toast-input>
+  >
+</toast>
 <block wx-if="{{isLogin}}">
   <mp-cells>
     <mp-cell link hover value="头像" link url="/pages/index/index">

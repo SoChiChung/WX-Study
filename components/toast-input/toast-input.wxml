@@ -1,6 +1,9 @@
-<!--components/toast-input/toast-input.wxml-->
-<view>
-    <text class="" selectable="false" space="false" decode="false">
-        
-    </text>
+<!-- components/toast-input/toast-input.wxml -->
+<view class="toast-input">
+    <text class="title">用一句话介绍你自己吧</text>
+     <input class="weui-input input"  tyep="text" maxlength="10" placeholder="最大输入长度为10" />
+    <view class="buttons">
+        <span>取消</span>
+        <span>确定</span>
+    </view>
 </view>

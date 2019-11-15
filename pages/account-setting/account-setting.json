@@ -2,7 +2,8 @@
   "usingComponents": {
     "mp-cell": "/miniprogram_npm/weui-miniprogram/cell/cell",
     "mp-cells": "/miniprogram_npm/weui-miniprogram/cells/cells",
-    "toast": "/components/toast/toast"
+    "toast": "/components/toast/toast",
+    "toast-input":"/components/toast-input/toast-input"
   },
   "navigationBarTitleText": "编辑资料"
 }

@@ -1,1 +1,23 @@
 /* components/toast-input/toast-input.wxss */
+.toast-input {
+  text-align: center;
+  width: 450rpx;
+  height: 250rpx;
+  margin: 25rpx;
+}
+.buttons {
+  height: 83rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.input {
+  height: 83rpx;
+}
+.title {
+  display: block;
+  height: 83rpx;
+  line-height: 83rpx;
+}
+.buttons span {
+}
