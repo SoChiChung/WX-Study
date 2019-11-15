@@ -10,16 +10,19 @@
 
 ### 项目效果
 
+#### 新闻页
+
 首页            |  详情
 :-------------------------:|:-------------------------:
 ![](https://user-images.githubusercontent.com/20694238/59890837-6282d700-9405-11e9-95ce-8273c140082b.PNG)  |  ![](https://user-images.githubusercontent.com/20694238/59890840-631b6d80-9405-11e9-9b0c-48dd043d434e.PNG)
 ![](https://user-images.githubusercontent.com/20694238/60524145-9ec80880-9d1e-11e9-850a-3b3bf9cbb8c7.png)  | ![](https://user-images.githubusercontent.com/20694238/59890842-644c9a80-9405-11e9-9b8b-e0bab3b3b470.PNG)
 
-### 个人中心
+#### 个人中心
 + 个人中心页面布局使用了 we-ui cell组件
 - 编辑资料逻辑  
 1. 加载时先检查storage 如果storage 为空就根据**wx.getUserInfo**获取用户头像 昵称  
 2. 生日地区修改使用了picker 通过picker改变userinfo picker里面 end的取值的当前的日期（new Date（）  通过引入util里面的util.js实现格式化）  
+3. 写了个弹窗组件 里面的内容通过slot获取
 
 ### 项目提示
 

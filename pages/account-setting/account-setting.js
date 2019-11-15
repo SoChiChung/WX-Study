@@ -1,7 +1,5 @@
 // pages/account-setting/account-setting.js
-const {
-  formatDateTime
-} = require("../../utils/util.js");
+const { formatDateTime } = require("../../utils/util.js");
 Page({
   /**
    * 页面的初始数据
@@ -11,15 +9,17 @@ Page({
     actionSheetHidden: true,
     actionSheetItems: ["item1", "item2", "item3"],
     date: formatDateTime(new Date()),
-    isLogin: false
+    isLogin: false,
+    showtoastintro: false
   },
-  getUserInfoHandle(data) { //根据用户授权按钮按下的值做事件处理
+  getUserInfoHandle(data) {
+    //根据用户授权按钮按下的值做事件处理
     //判断button的bindgetuserinfo返回的data中的data.detail.rawdata是否存在 判断用户按的是允许还是拒绝
-    console.log('用户点击了', data)
+    console.log("用户点击了", data);
     if (data.detail.rawData) {
       //重新渲染页面
       this.getUserInfo();
-      console.log(this.data)
+      console.log(this.data);
     }
   },
   getUserSetting() {
@@ -83,8 +83,8 @@ Page({
     if (userInfo.length == 0) {
       this.setData({
         isLogin: false
-      })
-      this.getWXinfo()
+      });
+      this.getWXinfo();
     } else {
       userInfo = JSON.parse(userInfo);
       this.setData({
@@ -99,7 +99,13 @@ Page({
       ["userInfo.birth"]: v.detail.value
     });
   },
-
+  //toast-input
+  settoastintro(e) {
+    let value = typeof e == "object" ? e.target.dataset.value : e;
+    this.setData({
+      showtoastintro: value
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -124,23 +130,23 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-    console.log('onHide')
+    console.log("onHide");
     wx.setStorage({
       key: "userInfo",
       data: JSON.stringify(this.data.userInfo)
-    })
+    });
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function() {
-    console.log('onUnload')
+    console.log("onUnload");
     /* wx.setStorage("userInfo", JSON.stringify(this.data.userInfo)); */
     wx.setStorage({
       key: "userInfo",
       data: JSON.stringify(this.data.userInfo)
-    })
+    });
   },
 
   /**
