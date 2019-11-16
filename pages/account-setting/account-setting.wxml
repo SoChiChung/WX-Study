@@ -1,9 +1,13 @@
 <!-- pages/account-setting/account-setting.wxml -->
-<toast wx:if="{{ showtoastintro }}">
-  <toast-input wx:if="{{ showtoastintro }}" slot="container"></toast-input>
-  >
+
+<toast wx:if="{{toastvalue.intro}}">
+  <toast-input wx:if="{{toastvalue.intro}}" propname="intro" slot="container" bindconfirm="setPro"
+    bindcancel='settoastprop'></toast-input>
 </toast>
-<block wx-if="{{ isLogin }}">
+
+
+
+<block wx-if="{{ toastvalue.isLogin }}">
   <mp-cells>
     <mp-cell link hover value="头像" link url="/pages/index/index">
       <image slot="footer" src="{{ userInfo.avatarUrl }}"></image>
@@ -14,7 +18,7 @@
       }}</text>
     </mp-cell>
     <mp-cell link hover value="介绍">
-      <text bindtap="settoastintro" slot="footer" data-value="true">{{
+      <text bindtap="settoastprop" data-propname="intro" slot="footer" data-value="true">{{
         userInfo.intro ? userInfo.intro : "待完善"
       }}</text>
     </mp-cell>
@@ -24,13 +28,7 @@
       <text slot="footer">{{ userInfo.gender == 1 ? "男" : "女" }}</text>
     </mp-cell>
     <mp-cell link hover value="生日">
-      <picker
-        slot="footer"
-        mode="date"
-        start="2015-09-01"
-        end="{{ date }}"
-        bindchange="bindDateChange"
-      >
+      <picker slot="footer" mode="date" start="2015-09-01" end="{{ date }}" bindchange="bindDateChange">
         <view class="picker">{{
           userInfo.birth ? userInfo.birth : "待完善"
         }}</view>
@@ -43,10 +41,6 @@
     </mp-cell>
   </mp-cells>
 </block>
-<button
-  open-type="getUserInfo"
-  wx-if="{{ !isLogin }}"
-  bindgetuserinfo="getUserInfoHandle"
->
+<button open-type="getUserInfo" wx-if="{{ !toastvalue.isLogin }}" bindgetuserinfo="getUserInfoHandle">
   点击登录
 </button>

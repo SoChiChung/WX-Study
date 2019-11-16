@@ -1,11 +1,11 @@
 {
   "pages": [
-    "pages/account-setting/account-setting",
-    "pages/userinfo/userinfo",
     "pages/index/index",
     "pages/logs/logs",
     "pages/detail/detail",
-    "pages/webview/webview"
+    "pages/webview/webview",
+    "pages/userinfo/userinfo",
+    "pages/account-setting/account-setting"
   ],
   "window": {
     "backgroundTextStyle": "light",

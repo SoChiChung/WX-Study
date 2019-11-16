@@ -9,8 +9,10 @@ Page({
     actionSheetHidden: true,
     actionSheetItems: ["item1", "item2", "item3"],
     date: formatDateTime(new Date()),
-    isLogin: false,
-    showtoastintro: false
+    toastvalue:{//所有toast的关联布尔变量
+      intro:false,
+      isLogin: false,
+    }
   },
   getUserInfoHandle(data) {
     //根据用户授权按钮按下的值做事件处理
@@ -30,7 +32,7 @@ Page({
         console.log(result);
         //检测用户之前是否已经授权登录信息
         this.setData({
-          isLogin: result.authSetting["scope.userInfo"]
+          ['toastvalue.isLogin']: result.authSetting["scope.userInfo"]
         });
       },
       fail: err => {
@@ -48,7 +50,7 @@ Page({
       success: data => {
         this.setData({
           userInfo: JSON.parse(data.rawData),
-          isLogin: true
+          ['toastvalue.isLogin']: true
         });
       },
       fail: err => {
@@ -82,14 +84,14 @@ Page({
     let userInfo = wx.getStorageSync("userInfo") || [];
     if (userInfo.length == 0) {
       this.setData({
-        isLogin: false
+       ['toastvalue.isLogin']: false
       });
       this.getWXinfo();
     } else {
       userInfo = JSON.parse(userInfo);
       this.setData({
         userInfo: userInfo,
-        isLogin: true
+       ['toastvalue.isLogin']: true
       });
     }
   },
@@ -99,12 +101,20 @@ Page({
       ["userInfo.birth"]: v.detail.value
     });
   },
-  //toast-input
-  settoastintro(e) {
-    let value = typeof e == "object" ? e.target.dataset.value : e;
+  //toast-input 设置toast展示
+  settoastprop(e) {
+    let {propname,value}=e.detail.dataset?e.detail.dataset:e.target.dataset
     this.setData({
-      showtoastintro: value
+      ["toastvalue."+propname]:value
     });
+  },
+  //设置属性
+  setPro(e){
+    let {propname,value}=e.detail
+    this.setData({
+      ["userInfo."+propname]:value,
+      ["toastvalue."+propname]:false
+    })
   },
   /**
    * 生命周期函数--监听页面加载
