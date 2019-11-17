@@ -81,7 +81,7 @@ Page({
         contentNewsList: [],
         showCopyright: false,
         refreshing: false,
-        inputShowed: false,
+        inputShowed: true,
         inputVal: "",
     },
     //根据图片设置swiper高度
@@ -106,7 +106,6 @@ Page({
                 showCopyright: true
             })
         })
-        /* this.setAutoSwiperHeight() */
     },
     //搜索
     search: function(value) {
@@ -118,7 +117,10 @@ Page({
                 }, {
                     text: '搜索结果2',
                     value: 2
-                }])
+                    }, {
+                        text: '搜索结果3',
+                        value: 3
+                    }])
             }, 200)
         })
     },
