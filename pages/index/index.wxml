@@ -1,0 +1,31 @@
+<!-- index.wxml -->
+<!-- 首页图片展示 -->
+<view class="banner">
+    <image class="banner-img" src="/image/index/banner.png" mode="aspectFit"></image>
+</view>
+<!-- 四个tab -->
+<view class="tabbanner">
+    <view class="tabbaner-container">
+        <image class="tabbanner-icon" src="/image/index/renwu.png"></image>
+        <text class="tabbanner-title">日常任务</text>
+    </view>
+    <view class="tabbaner-container">
+        <image class="tabbanner-icon" src="/image/index/zhibo.png"></image>
+        <text class="tabbanner-title">直播列表</text>
+    </view>
+    <view class="tabbaner-container">
+        <image class="tabbanner-icon" src="/image/index/amuse.png"></image>
+        <text class="tabbanner-title">娱乐休闲</text>
+    </view>
+    <view class="tabbaner-container">
+        <image class="tabbanner-icon" src="/image/index/chengshi.png"></image>
+        <text class="tabbanner-title">城市定位</text>
+    </view>
+</view>
+<!-- 招聘信息 -->
+<import src="../../templates/template" />
+<view class="listContainer">
+    <view wx:for="{{jobList}}" wx:key="index" data-index="{{index}}">
+        <template is="list-item" data="{{...item}}" />
+    </view>
+</view>
