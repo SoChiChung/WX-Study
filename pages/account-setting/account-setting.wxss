@@ -1,0 +1,9 @@
+/* pages/account-setting/account-setting.wxss */
+image{
+  width: 80rpx;
+height: 80rpx;
+display: inline-block;
+overflow: hidden;
+border-radius: 50%;
+
+}

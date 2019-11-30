@@ -1,2 +1,24 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="page">
+    <view class="page__bd">
+        <mp-cells title=" ">
+            <mp-cell link hover value="简历">
+                <image slot="title" src="/image/userinfo/account_setting.png"></image>
+            </mp-cell>
+            <mp-cell link hover value="机会">
+                <image slot="title" src="/image/userinfo/tweet.png"></image>
+            </mp-cell>
+        </mp-cells>
+        <mp-cells title=" ">
+            <mp-cell link hover value="收藏">
+                <image slot="title" src="/image/userinfo/flow.png"></image>
+            </mp-cell>
+            <mp-cell link hover value="意见反馈">
+                <image slot="title" src="/image/userinfo/edit_info.png"></image>
+            </mp-cell>
+            <mp-cell link hover value="设置">
+                <image slot="title" src="/image/userinfo/clear_storage.png"></image>
+            </mp-cell>
+        </mp-cells>
+    </view>
+</view>

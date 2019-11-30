@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/logs/logs",
-        "pages/user/user"
+        "pages/user/user",
+        "pages/account-setting/account-setting"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -29,7 +30,7 @@
                 "text": "在招职位"
             },
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/account-setting/account-setting",
                 "iconPath": "image/my.png",
                 "selectedIconPath": "image/my-s.png",
                 "text": "我的"

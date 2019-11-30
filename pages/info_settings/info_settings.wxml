@@ -1,0 +1,2 @@
+<!--pages/info_settings/info_settings.wxml-->
+<button bindtap="getImage">test</button>
