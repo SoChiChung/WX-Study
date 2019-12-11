@@ -1,0 +1,9 @@
+<!-- components/toast-input/toast-input.wxml -->
+<view class="toast-input">
+    <text class="title">{{title}}</text>
+    <input class="weui-input input" tyep="text" maxlength="20" placeholder="最大输入长度为20" bindblur="getInputValue" />
+    <view class="buttons">
+        <span bindtap='cancel' data-propname="{{propname}}" data-value="{{false}}">取消</span>
+        <span bindtap="confirm">确定</span>
+    </view>
+</view>

@@ -1,0 +1,25 @@
+/* components/my-searchbar/my-searchbar.wxss */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: 20rpx solid #19B5FE;
+  align-items: center;
+  padding-left: 20rpx;
+  overflow: hidden;
+  height: 80rpx;
+  padding-right: 20rpx;
+  /* padding: 20rpx; */
+}
+button {
+  margin-right: 0;
+  background: white;
+  margin: 0;
+  width: auto;
+  border: none;
+  box-shadow: none;
+}
+.button-hover {
+  background-color: white;
+}

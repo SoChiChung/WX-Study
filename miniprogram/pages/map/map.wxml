@@ -1,0 +1,6 @@
+<!-- miniprogram/pages/map/map.wxml -->
+<view class="mapContainer">
+    <searchbar bindload="searchLoad" ></searchbar>
+    <!-- <map id="myMap">
+</map> -->
+</view>

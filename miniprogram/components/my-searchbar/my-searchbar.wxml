@@ -1,0 +1,5 @@
+<!-- components/my-searchbar/my-searchbar.wxml -->
+<view class="container">
+    <input class="weui-input input" bindinput="load" type="text" maxlength="20" placeholder="请输入地名（最多20字）" bindblur="getInputValue" />
+    <button size="mini">搜索</button>
+</view>
