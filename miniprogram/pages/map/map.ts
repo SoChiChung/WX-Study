@@ -11,7 +11,7 @@ Page({
   },
   searchLoad(e: any) {
     let keyword: string = e.detail.detail.value;
-    debounce(this,this.searchSite, [keyword])();
+    debounce(this.searchSite, [keyword],3000)();
   },
   //调用腾讯地图SDK查询地点
   searchSite(keyword: string): any {

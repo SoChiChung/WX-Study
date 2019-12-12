@@ -1,4 +1,5 @@
 // components/my-searchbar/my-searchbar.ts
+// const { debounce, throttle } = require("../../utils/tool.js");
 Component({
   /**
    * 组件的属性列表
@@ -11,7 +12,7 @@ Component({
    */
   data: {
     array: [],
-    value:""
+    value: ""
   },
 
   /**
@@ -19,7 +20,7 @@ Component({
    */
   methods: {
     //一个load 函数 一个click 函数
-    load(e:any) {
+    load(e: any) {
       this.setData({
         value: e.detail.value
       })

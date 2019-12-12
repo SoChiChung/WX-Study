@@ -1,13 +1,13 @@
 //防抖
-function debounce(this: any, fn: Function, args: any[]) {
+function debounce(this: any, fn: Function, args: any[],time:number) {
   const that = this;
   let timeout: any = null;
-  return function() {
+  return ()=> {
     clearTimeout(timeout);
     timeout = setTimeout(() => {
       fn.call(that, ...args);
       /* fn(...args) */
-    }, 5000);
+    }, time);
   };
 }
 
