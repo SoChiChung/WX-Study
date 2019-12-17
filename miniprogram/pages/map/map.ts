@@ -6,24 +6,25 @@ Page({
     keyword: "广东工业大学",
     lat: 23.099994,
     lng: 113.32452,
-    marker: []
-    /* sending: false */
+    marker: [],
+    suggests: [],
+    sending: false
   },
   searchLoad(e: any) {
     let keyword: string = e.detail.detail.value;
-    debounce(this.searchSite, [keyword],3000)();
+    /* debounce(this.searchSite, [keyword], 3000)(); */
+    this.searchSite(keyword);
   },
   //调用腾讯地图SDK查询地点
   searchSite(keyword: string): any {
-    
-    /* if (this.data.sending false) return; */
-    /* else { */
+    if (this.data.sending) return;
     this.setData({
       sending: true
     });
+    setTimeout(() => {
       qqmapsdk.search({
         keyword,
-        success: (res: any) => console.log("成功了", res,"keyword",keyword),
+        success: (res: any) => console.log("成功了", res, "keyword", keyword),
         fail: (res: any) => console.log("失败了", res),
         complete: () => {
           this.setData({
@@ -31,10 +32,42 @@ Page({
           });
         }
       });
-    /* } */
+    }, 2000);
+  },
+  suggestLoad(e: any) {
+    let keyword: string = e.detail.detail.value;
+    this.getSuggest(keyword);
   },
   //关键词的获取
-  getSuggest() {},
+  getSuggest(keyword: string) {
+    if (this.data.sending) return;
+    this.setData({
+      sending: true
+    });
+    setTimeout(() => {
+      qqmapsdk.getSuggestion({
+        keyword,
+        success: (res: ResponseData) => {
+          this.setData({
+            suggests: res.data
+          });
+          console.log("成功了");
+        },
+        fail: (err: any) => {
+          console.log("失败了", err);
+        },
+        complete: () => {
+          this.setData({
+            sending: false
+          });
+        }
+      });
+    }, 2000);
+  },
+  /* suggestLoad(e: any) {
+    let keyword: string = e.detail.detail.value;
+    debounce(this.getSuggest, [keyword], 3000)();
+  }, */
   onLoad: () => {
     //实例化地图API
     qqmapsdk = new QQMapWX({
@@ -42,5 +75,7 @@ Page({
     });
   },
 
-  onShow: function() {}
+  onShow: function() {
+    /* this.getSuggest(); */
+  }
 });

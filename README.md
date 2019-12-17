@@ -33,7 +33,7 @@
      接口首先开通了小程序**腾讯位置服务**  
      然后使用了**小程序 Javascript SDK**
   2. 展示
-      搜索使用了封装的防抖节流
+     搜索使用了封装的防抖节流
   3. 配置  
      **app.json**设置了
      ```json
@@ -52,10 +52,12 @@
 - 文件存储：在小程序前端直接上传/下载云端文件，在云开发控制台可视化管理
 - 云函数：在云端运行的代码，微信私有协议天然鉴权，开发者只需编写业务逻辑代码
 
-## 踩过的坑  
-1. ts封装的防抖节流
+## 踩过的坑
+
+1. ts 封装的防抖节流
+
 ## 参考文档
 
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 - [微信开发指南](https://developers.weixin.qq.com/miniprogram/dev/framework/)
-- [微信小程序 JavaScript SDK](https://lbs.qq.com/qqmap_wx_jssdk/index.html)
+- [腾讯位置服务 微信小程序 JavaScript SDK](https://lbs.qq.com/qqmap_wx_jssdk/index.html)

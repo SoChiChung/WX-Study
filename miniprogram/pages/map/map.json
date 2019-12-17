@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "searchbar": "../../components/my-searchbar/my-searchbar"
+    "searchbar": "../../components/my-searchbar/my-searchbar",
+    "searchList": "../../components/my-searchList/my-searchList"
   }
 }
