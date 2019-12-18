@@ -1,1 +1,8 @@
 /* components/my-searchList/my-searchList.wxss */
+.page_bd{
+    overflow: hidden;
+}
+#form{
+    position: fixed;
+    z-index: 999;
+}

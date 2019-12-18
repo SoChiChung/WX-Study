@@ -8,7 +8,8 @@ Page({
     lng: 113.32452,
     marker: [],
     suggests: [],
-    sending: false
+    sending: false,
+    timeout:null
   },
   searchLoad(e: any) {
     let keyword: string = e.detail.detail.value;
@@ -48,10 +49,11 @@ Page({
       qqmapsdk.getSuggestion({
         keyword,
         success: (res: ResponseData) => {
+          let suggests = res.data.slice(0, 5)
           this.setData({
-            suggests: res.data
+            suggests
           });
-          console.log("成功了");
+          console.log("成功了",keyword);
         },
         fail: (err: any) => {
           console.log("失败了", err);
@@ -62,7 +64,7 @@ Page({
           });
         }
       });
-    }, 2000);
+    }, 1000);
   },
   /* suggestLoad(e: any) {
     let keyword: string = e.detail.detail.value;

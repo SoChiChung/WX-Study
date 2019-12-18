@@ -1,3 +1,5 @@
+
+
 <!-- miniprogram/pages/map/map.wxml -->
 <searchbar bindload="suggestLoad"></searchbar>
 <searchList propsData="{{suggests}}"></searchList>
