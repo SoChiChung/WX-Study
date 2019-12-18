@@ -1,14 +1,8 @@
-
-
 <!-- miniprogram/pages/map/map.wxml -->
-<searchbar bindload="suggestLoad"></searchbar>
-<searchList propsData="{{suggests}}"></searchList>
 <view class="page-body">
     <view class="page-section page-section-gap">
-        <map id="myMap" style="width: 100%; height: 300px;" latitude="{{latitude}}" longitude="{{longitude}}" show-location></map>
+        <map id="myMap" style="width: 100%; height: 300px;" latitude="{{lat}}" longitude="{{lng}}" show-location></map>
     </view>
 </view>
-<view class="mapContainer">
-    <!-- <map id="myMap">
-</map> -->
-</view>
+<searchbar bindload="suggestLoad"></searchbar>
+<searchList propsData="{{suggests}}" bindchange="setMapLocation"></searchList>

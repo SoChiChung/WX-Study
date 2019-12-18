@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "compile": "./miniprogram/node_modules/typescript/bin/tsc",
-    "tsc": "node .//miniprogram/node_modules/typescript/lib/tsc.js"
+    "tsc": "node ./miniprogram/node_modules/typescript/lib/tsc.js"
   },
   "keywords": [],
   "author": "",

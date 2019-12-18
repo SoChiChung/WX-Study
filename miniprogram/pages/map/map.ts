@@ -9,7 +9,7 @@ Page({
     marker: [],
     suggests: [],
     sending: false,
-    timeout:null
+    timeout: null
   },
   searchLoad(e: any) {
     let keyword: string = e.detail.detail.value;
@@ -49,11 +49,11 @@ Page({
       qqmapsdk.getSuggestion({
         keyword,
         success: (res: ResponseData) => {
-          let suggests = res.data.slice(0, 5)
+          let suggests = res.data;
           this.setData({
             suggests
           });
-          console.log("成功了",keyword);
+          console.log("成功了", keyword);
         },
         fail: (err: any) => {
           console.log("失败了", err);
@@ -65,6 +65,14 @@ Page({
         }
       });
     }, 1000);
+  },
+  setMapLocation(e: any) {
+    console.log("mape", e);
+    let { lat, lng } = e.detail;
+    this.setData({
+      lat,
+      lng
+    });
   },
   /* suggestLoad(e: any) {
     let keyword: string = e.detail.detail.value;

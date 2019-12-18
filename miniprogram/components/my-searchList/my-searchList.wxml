@@ -3,7 +3,7 @@
     <mp-form id="form" rules="{{rules}}" models="{{formData}}">
         <mp-cells>
             <mp-checkbox-group prop="radio" multi="{{false}}" bindchange="radioChange">
-                <mp-checkbox wx:for="{{propsData}}" wx:key="index" label="{{item.title}}" value="{{item.address}}"></mp-checkbox>
+                <mp-checkbox wx:for="{{propsData}}" wx:for-index="index" wx:key="index" label="{{item.title}}" value="{{index}}"></mp-checkbox>
             </mp-checkbox-group>
         </mp-cells>
     </mp-form>

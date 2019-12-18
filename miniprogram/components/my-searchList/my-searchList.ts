@@ -1,7 +1,7 @@
 Component({
   properties: {
-    propsData:{
-      type:Object
+    propsData: {
+      type: Object
     }
   },
   data: {
@@ -43,9 +43,9 @@ Component({
     ]
   },
   methods: {
-    radioChange: function (e) {
-      console.log("radio发生change事件，携带value值为：", e.detail.value);
-
+    radioChange: function(e: any) {
+      let index = e.detail.value;
+      /* console.log("radio发生change事件，携带value值为：", e.detail.value);
       var radioItems = this.data.radioItems;
       for (var i = 0, len = radioItems.length; i < len; ++i) {
         radioItems[i].checked = radioItems[i].value == e.detail.value;
@@ -54,7 +54,10 @@ Component({
       this.setData({
         radioItems: radioItems,
         [`formData.radio`]: e.detail.value
-      });
+      }); */
+      let location = this.properties.propsData[index].location;
+      console.log("radio", e);
+      this.triggerEvent("change", location);
     }
   }
 });
