@@ -4,6 +4,7 @@
 		"ignore": []
 	},
 	"miniprogramRoot": "miniprogram/",
+	"cloudfunctionRoot": "functions/",
 	"compileType": "miniprogram",
 	"libVersion": "2.9.4",
 	"projectname": "finalhomework",
@@ -36,5 +37,6 @@
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"appid": "wxb3752a0a116b5276",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
 	"condition": {}
 }

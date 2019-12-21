@@ -1,0 +1,4 @@
+<!-- miniprogram/pages/scancode/scancode.wxml -->
+<view class="container">
+    <button bindtap="scan">扫码</button>
+</view>
