@@ -32,6 +32,7 @@
   1. 接口  
      接口首先开通了小程序**腾讯位置服务**  
      然后使用了**小程序 Javascript SDK**
+     后来发现好像可以使用**腾讯地图选点插件**
   2. 展示
      搜索使用了封装的防抖节流
   3. 配置  
@@ -43,7 +44,10 @@
         }
      },
      ```
-
+     - 扫码  
+      1. 通过小程序扫码发请求给服务器 服务器返回资源
+      2. 如果不是小程序扫码 那么返回无结果
+     - 
 ## 云开发 quickstart
 
 这是云开发的快速启动指引，其中演示了如何上手使用云开发的三大基础能力：
@@ -61,3 +65,4 @@
 - [云开发文档](https://developers.weixin.qq.com/miniprogram/dev/wxcloud/basis/getting-started.html)
 - [微信开发指南](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 - [腾讯位置服务 微信小程序 JavaScript SDK](https://lbs.qq.com/qqmap_wx_jssdk/index.html)
+- [腾讯地图选点插件](https://lbs.qq.com/miniprogram_plugin/location-picker.html)
