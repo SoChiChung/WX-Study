@@ -20,7 +20,7 @@
       天气预报  
       地图查找  
       个人中心（扫码登录）
-   -
+   - 
 2. 开发语言
    - 为了检验 ts 学习成果，所以使用**typescript**
    - tsconfig.json 配置见<a href="https://www.tslang.cn/docs/handbook/tsconfig-json.html">这里</a>
@@ -44,9 +44,13 @@
         }
      },
      ```
-     - 扫码  
-      1. 通过小程序扫码发请求给服务器 服务器返回资源
-      2. 如果不是小程序扫码 那么返回无结果
+ - 扫码  
+   1. 功能
+      1. 通过小程序生成对应书籍二维码
+      2. 其他用户可以通过小程序打开的扫码 扫书籍二维码把书籍添加到自己的书单里
+   2. 实现
+      1. 使用QRcode生成二维码
+      2. 使用云函数实现读取数据库的数据
      - 
 ## 云开发 quickstart
 
@@ -59,6 +63,8 @@
 ## 踩过的坑
 
 1. ts 封装的防抖节流
+2. ts调用云函数的时候 容易发生类型不对 此时可以检查**wx/xxx.d.ts**内的接口查看定义
+3. ts调用云函数时 容易发生编辑器内已修改 但是source里面代码没发生变化的情况 重启开发工具即可
 
 ## 参考文档
 
@@ -66,3 +72,4 @@
 - [微信开发指南](https://developers.weixin.qq.com/miniprogram/dev/framework/)
 - [腾讯位置服务 微信小程序 JavaScript SDK](https://lbs.qq.com/qqmap_wx_jssdk/index.html)
 - [腾讯地图选点插件](https://lbs.qq.com/miniprogram_plugin/location-picker.html)
+- [QRCODE](https://github.com/demi520/wxapp-qrcode)

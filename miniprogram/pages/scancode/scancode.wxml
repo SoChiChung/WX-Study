@@ -2,3 +2,15 @@
 <view class="container">
     <button bindtap="scan">扫码</button>
 </view>
+<view class="container">
+    <block wx:for="{{bookslist}}">
+        <view class="card">
+            <view class="card-left">
+                <text>书名：{{item.bookname}}</text>
+            </view>
+            <view class="card-right">
+                <button>获取二维码</button>
+            </view>
+        </view>
+    </block>
+</view>
