@@ -4,7 +4,8 @@
         "pages/map/map",
         "pages/index/index",
         "pages/logs/logs",
-        "pages/txmap/txmap"
+        "pages/txmap/txmap",
+        "pages/qrcode/qrcode"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -24,7 +25,7 @@
                 "selectedIconPath": "/images/home-s.png"
             },
             {
-                "pagePath": "pages/index/index",
+                "pagePath": "pages/qrcode/qrcode",
                 "text": "test",
                 "iconPath": "images/home.png",
                 "selectedIconPath": "/images/home-s.png"

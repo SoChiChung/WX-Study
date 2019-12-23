@@ -11,6 +11,9 @@ interface ResponseData {
     result?: AnyObject | string | undefined;
     errMsg?: string
 }
+interface Databaseres{
+
+}
 interface IAPISuccessParam {
     errMsg: string
 }
