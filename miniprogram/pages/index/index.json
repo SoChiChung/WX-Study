@@ -1,3 +1,9 @@
 {
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#C34943",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "component-copyright": "/components/copyright/copyright",
+    "scroll-view-refresh-load": "/components/scroll-view-refresh-load/scroll-view-refresh-load",
+    "mp-searchbar": "/miniprogram_npm/weui-miniprogram/searchbar/searchbar"
+  }
 }

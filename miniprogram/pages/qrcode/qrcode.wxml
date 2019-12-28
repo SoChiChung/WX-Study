@@ -3,5 +3,6 @@
     <image bindtap="previewImg" mode="scaleToFill" src="{{imagePath}}"></image>
 </view>
 <view class="canvas-box">
-    <canvas hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="qrcode" />
+    <canvas hidden="{{canvasHidden}}" style="width: 686rpx;height: 686rpx;background:#f1f1f1;" canvas-id="mycanvas" />
 </view>
+<text>打开小程序扫一扫，就可以把{{book.bookname}}加入你的书单了</text>

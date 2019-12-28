@@ -5,7 +5,11 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/txmap/txmap",
-        "pages/qrcode/qrcode"
+        "pages/qrcode/qrcode",
+        "pages/account-setting/account-setting",
+        "pages/detail/detail",
+        "pages/userinfo/userinfo",
+        "pages/webview/webview"
     ],
     "window": {
         "backgroundTextStyle": "light",
@@ -25,26 +29,20 @@
                 "selectedIconPath": "/images/home-s.png"
             },
             {
-                "pagePath": "pages/qrcode/qrcode",
-                "text": "test",
-                "iconPath": "images/home.png",
-                "selectedIconPath": "/images/home-s.png"
-            },
-            {
                 "pagePath": "pages/scancode/scancode",
                 "text": "扫码",
                 "iconPath": "images/home.png",
                 "selectedIconPath": "images/home-s.png"
             },
             {
-                "pagePath": "pages/map/map",
-                "text": "地图",
+                "pagePath": "pages/txmap/txmap",
+                "text": "tx",
                 "iconPath": "images/home.png",
                 "selectedIconPath": "images/home-s.png"
             },
             {
-                "pagePath": "pages/txmap/txmap",
-                "text": "tx",
+                "pagePath": "pages/userinfo/userinfo",
+                "text": "我的",
                 "iconPath": "images/home.png",
                 "selectedIconPath": "images/home-s.png"
             }

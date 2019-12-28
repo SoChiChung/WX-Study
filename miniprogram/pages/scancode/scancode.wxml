@@ -9,7 +9,7 @@
                 <text>书名：{{item.bookname}}</text>
             </view>
             <view class="card-right">
-                <button>获取二维码</button>
+                <button data-id="{{item._id}}" bindtap="jumptoqrcode">获取二维码</button>
             </view>
         </view>
     </block>

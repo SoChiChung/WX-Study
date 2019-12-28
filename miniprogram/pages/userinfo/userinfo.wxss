@@ -1,0 +1,20 @@
+/* pages/userinfo/userinfo.wxss */
+
+page {
+  background-color: rgba(247, 249, 252, 1);
+}
+
+.weui-cell__ft {
+  font-size: 29rpx;
+}
+
+.weui-cell__bd {
+  font-size: 32rpx;
+}
+
+mp-cell image {
+  margin-right: 16px;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+}

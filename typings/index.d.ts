@@ -1,22 +1,27 @@
 /// <reference path="./types/index.d.ts" />
 
 interface IAppOption {
-    globalData: {
-        userInfo?: WechatMiniprogram.UserInfo;
-    };
-    userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
+  globalData: {
+    userInfo?: WechatMiniprogram.UserInfo;
+  };
+  userInfoReadyCallback?: WechatMiniprogram.GetUserInfoSuccessCallback;
 }
 interface ResponseData {
-    data?: [];
-    result?: AnyObject | string | undefined;
-    errMsg?: string
+  data?: [];
+  result?: AnyObject | string | undefined;
+  errMsg?: string;
 }
-interface Databaseres{
-
-}
+interface Databaseres {}
 interface IAPISuccessParam {
-    errMsg: string
+  errMsg: string;
 }
 interface CallFunctionResult extends IAPISuccessParam {
-    result: AnyObject | string | undefined
+  result: AnyObject | string | undefined;
+}
+interface myevent {
+  target: {
+    dataset: AnyObject;
+  };
+  type: string;
+  dataset: AnyObject;
 }

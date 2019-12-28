@@ -1,52 +1,213 @@
-"use strict";
-var app = getApp();
+const app = getApp()
+const appKey = 'fc35d7872c25744ab4669c7d9dbcf15e' // 用于访问新闻接口的appKey
+const request = require('../../utils/request.js')
+const extractArticleInfo = require('./utils/getArticleTime.js')
+const shuffle = require('./utils/shuffle.js')
+
 Page({
     data: {
-        motto: 'Hello World',
-        userInfo: {},
-        hasUserInfo: false,
-        canIUse: wx.canIUse('button.open-type.getUserInfo'),
+        height: 0,
+        widHeight: 0,
+        headerTitleName: [{
+                name: '头条',
+                nameID: '201701',
+                newsType: 'top'
+            },
+            {
+                name: '军事',
+                nameID: '201702',
+                newsType: 'junshi'
+            },
+            {
+                name: '体育',
+                nameID: '201703',
+                newsType: 'tiyu'
+            },
+            {
+                name: '科技',
+                nameID: '201704',
+                newsType: 'keji'
+            },
+            {
+                name: '财经',
+                nameID: '201705',
+                newsType: 'caijing'
+            },
+            {
+                name: '社会',
+                nameID: '201706',
+                newsType: 'shehui'
+            },
+            {
+                name: '时尚',
+                nameID: '201707',
+                newsType: 'shishang'
+            },
+            {
+                name: '娱乐',
+                nameID: '201708',
+                newsType: 'yule'
+            },
+            {
+                name: '国内',
+                nameID: '201709',
+                newsType: 'guonei'
+            },
+            {
+                name: '国际',
+                nameID: '2017010',
+                newsType: 'guoji'
+            }
+        ],
+        swiperIndex: '1/4',
+        topPic: [{
+                imageUrl: "/images/banner/12001.png",
+                newsUrl: "https://www.wanplus.com/lol/video/1295093"
+            },
+            {
+                imageUrl: "/images/banner/120811.png",
+                newsUrl: "https://www.wanplus.com/article/263911.html"
+            },
+            {
+                imageUrl: "/images/banner/120809.png",
+                newsUrl: "https://www.wanplus.com/article/264003.html"
+            },
+            {
+                imageUrl: "/images/banner/120759.png",
+                newsUrl: "https://www.wanplus.com/article/263957.html"
+            }
+        ],
+        tapID: 201701, // 判断是否选中
+        contentNewsList: [],
+        showCopyright: false,
+        refreshing: false,
+        inputShowed: true,
+        inputVal: "",
     },
-    bindViewTap: function () {
-        wx.navigateTo({
-            url: '../logs/logs',
-        });
+    //根据图片设置swiper高度
+    setAutoSwiperHeight() {
+        var query = wx.createSelectorQuery();
+        var that = this;
+        query.select('.slide-image').boundingClientRect(function(rect) {
+
+            that.setData({
+                // 获取要循环标签的高度
+                height: rect.height,
+                widHeight: rect.height + "px"
+            })
+        }).exec();
     },
-    onLoad: function () {
-        var _this = this;
-        if (app.globalData.userInfo) {
-            this.setData({
-                userInfo: app.globalData.userInfo,
-                hasUserInfo: true,
-            });
-        }
-        else if (this.data.canIUse) {
-            app.userInfoReadyCallback = function (res) {
-                _this.setData({
-                    userInfo: res.userInfo,
-                    hasUserInfo: true,
-                });
-            };
-        }
-        else {
-            wx.getUserInfo({
-                success: function (res) {
-                    app.globalData.userInfo = res.userInfo;
-                    _this.setData({
-                        userInfo: res.userInfo,
-                        hasUserInfo: true,
-                    });
-                },
-            });
-        }
-    },
-    getUserInfo: function (e) {
-        console.log(e);
-        app.globalData.userInfo = e.detail.userInfo;
+    onLoad: function() {
         this.setData({
-            userInfo: e.detail.userInfo,
-            hasUserInfo: true,
-        });
+            search: this.search.bind(this)
+        })
+        this.renderPage('top', false, () => {
+            this.setData({
+                showCopyright: true
+            })
+        })
     },
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBRUEsSUFBTSxHQUFHLEdBQUcsTUFBTSxFQUFjLENBQUE7QUFFaEMsSUFBSSxDQUFDO0lBQ0gsSUFBSSxFQUFFO1FBQ0osS0FBSyxFQUFFLGFBQWE7UUFDcEIsUUFBUSxFQUFFLEVBQUU7UUFDWixXQUFXLEVBQUUsS0FBSztRQUNsQixPQUFPLEVBQUUsRUFBRSxDQUFDLE9BQU8sQ0FBQyw4QkFBOEIsQ0FBQztLQUNwRDtJQUVELFdBQVc7UUFDVCxFQUFFLENBQUMsVUFBVSxDQUFDO1lBQ1osR0FBRyxFQUFFLGNBQWM7U0FDcEIsQ0FBQyxDQUFBO0lBQ0osQ0FBQztJQUNELE1BQU07UUFBTixpQkEyQkM7UUExQkMsSUFBSSxHQUFHLENBQUMsVUFBVSxDQUFDLFFBQVEsRUFBRTtZQUMzQixJQUFJLENBQUMsT0FBTyxDQUFDO2dCQUNYLFFBQVEsRUFBRSxHQUFHLENBQUMsVUFBVSxDQUFDLFFBQVE7Z0JBQ2pDLFdBQVcsRUFBRSxJQUFJO2FBQ2xCLENBQUMsQ0FBQTtTQUNIO2FBQU0sSUFBSSxJQUFJLENBQUMsSUFBSSxDQUFDLE9BQU8sRUFBRTtZQUc1QixHQUFHLENBQUMscUJBQXFCLEdBQUcsVUFBQSxHQUFHO2dCQUM3QixLQUFJLENBQUMsT0FBTyxDQUFDO29CQUNYLFFBQVEsRUFBRSxHQUFHLENBQUMsUUFBUTtvQkFDdEIsV0FBVyxFQUFFLElBQUk7aUJBQ2xCLENBQUMsQ0FBQTtZQUNKLENBQUMsQ0FBQTtTQUNGO2FBQU07WUFFTCxFQUFFLENBQUMsV0FBVyxDQUFDO2dCQUNiLE9BQU8sRUFBRSxVQUFBLEdBQUc7b0JBQ1YsR0FBRyxDQUFDLFVBQVUsQ0FBQyxRQUFRLEdBQUcsR0FBRyxDQUFDLFFBQVEsQ0FBQTtvQkFDdEMsS0FBSSxDQUFDLE9BQU8sQ0FBQzt3QkFDWCxRQUFRLEVBQUUsR0FBRyxDQUFDLFFBQVE7d0JBQ3RCLFdBQVcsRUFBRSxJQUFJO3FCQUNsQixDQUFDLENBQUE7Z0JBQ0osQ0FBQzthQUNGLENBQUMsQ0FBQTtTQUNIO0lBQ0gsQ0FBQztJQUNELFdBQVcsRUFBWCxVQUFZLENBQU07UUFDaEIsT0FBTyxDQUFDLEdBQUcsQ0FBQyxDQUFDLENBQUMsQ0FBQTtRQUNkLEdBQUcsQ0FBQyxVQUFVLENBQUMsUUFBUSxHQUFHLENBQUMsQ0FBQyxNQUFNLENBQUMsUUFBUSxDQUFBO1FBQzNDLElBQUksQ0FBQyxPQUFPLENBQUM7WUFDWCxRQUFRLEVBQUUsQ0FBQyxDQUFDLE1BQU0sQ0FBQyxRQUFRO1lBQzNCLFdBQVcsRUFBRSxJQUFJO1NBQ2xCLENBQUMsQ0FBQTtJQUNKLENBQUM7Q0FDRixDQUFDLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyIvLyBpbmRleC50c1xuLy8g6I635Y+W5bqU55So5a6e5L6LXG5jb25zdCBhcHAgPSBnZXRBcHA8SUFwcE9wdGlvbj4oKVxuXG5QYWdlKHtcbiAgZGF0YToge1xuICAgIG1vdHRvOiAnSGVsbG8gV29ybGQnLFxuICAgIHVzZXJJbmZvOiB7fSxcbiAgICBoYXNVc2VySW5mbzogZmFsc2UsXG4gICAgY2FuSVVzZTogd3guY2FuSVVzZSgnYnV0dG9uLm9wZW4tdHlwZS5nZXRVc2VySW5mbycpLFxuICB9LFxuICAvLyDkuovku7blpITnkIblh73mlbBcbiAgYmluZFZpZXdUYXAoKSB7XG4gICAgd3gubmF2aWdhdGVUbyh7XG4gICAgICB1cmw6ICcuLi9sb2dzL2xvZ3MnLFxuICAgIH0pXG4gIH0sXG4gIG9uTG9hZCgpIHtcbiAgICBpZiAoYXBwLmdsb2JhbERhdGEudXNlckluZm8pIHtcbiAgICAgIHRoaXMuc2V0RGF0YSh7XG4gICAgICAgIHVzZXJJbmZvOiBhcHAuZ2xvYmFsRGF0YS51c2VySW5mbyxcbiAgICAgICAgaGFzVXNlckluZm86IHRydWUsXG4gICAgICB9KVxuICAgIH0gZWxzZSBpZiAodGhpcy5kYXRhLmNhbklVc2UpIHtcbiAgICAgIC8vIOeUseS6jiBnZXRVc2VySW5mbyDmmK/nvZHnu5zor7fmsYLvvIzlj6/og73kvJrlnKggUGFnZS5vbkxvYWQg5LmL5ZCO5omN6L+U5ZueXG4gICAgICAvLyDmiYDku6XmraTlpITliqDlhaUgY2FsbGJhY2sg5Lul6Ziy5q2i6L+Z56eN5oOF5Ya1XG4gICAgICBhcHAudXNlckluZm9SZWFkeUNhbGxiYWNrID0gcmVzID0+IHtcbiAgICAgICAgdGhpcy5zZXREYXRhKHtcbiAgICAgICAgICB1c2VySW5mbzogcmVzLnVzZXJJbmZvLFxuICAgICAgICAgIGhhc1VzZXJJbmZvOiB0cnVlLFxuICAgICAgICB9KVxuICAgICAgfVxuICAgIH0gZWxzZSB7XG4gICAgICAvLyDlnKjmsqHmnIkgb3Blbi10eXBlPWdldFVzZXJJbmZvIOeJiOacrOeahOWFvOWuueWkhOeQhlxuICAgICAgd3guZ2V0VXNlckluZm8oe1xuICAgICAgICBzdWNjZXNzOiByZXMgPT4ge1xuICAgICAgICAgIGFwcC5nbG9iYWxEYXRhLnVzZXJJbmZvID0gcmVzLnVzZXJJbmZvXG4gICAgICAgICAgdGhpcy5zZXREYXRhKHtcbiAgICAgICAgICAgIHVzZXJJbmZvOiByZXMudXNlckluZm8sXG4gICAgICAgICAgICBoYXNVc2VySW5mbzogdHJ1ZSxcbiAgICAgICAgICB9KVxuICAgICAgICB9LFxuICAgICAgfSlcbiAgICB9XG4gIH0sXG4gIGdldFVzZXJJbmZvKGU6IGFueSkge1xuICAgIGNvbnNvbGUubG9nKGUpXG4gICAgYXBwLmdsb2JhbERhdGEudXNlckluZm8gPSBlLmRldGFpbC51c2VySW5mb1xuICAgIHRoaXMuc2V0RGF0YSh7XG4gICAgICB1c2VySW5mbzogZS5kZXRhaWwudXNlckluZm8sXG4gICAgICBoYXNVc2VySW5mbzogdHJ1ZSxcbiAgICB9KVxuICB9LFxufSlcbiJdfQ==
+    //搜索
+    search: function(value) {
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([{
+                    text: '搜索结果',
+                    value: 1
+                }, {
+                    text: '搜索结果2',
+                    value: 2
+                    }, {
+                        text: '搜索结果3',
+                        value: 3
+                    }])
+            }, 200)
+        })
+    },
+    selectResult: function(e) {
+        console.log('select result', e.detail)
+    },
+    // headerBar 点击
+    headerTitleClick: function(e) {
+        this.setData({
+            tapID: e.target.dataset.id
+        })
+        this.renderPage(e.currentTarget.dataset.newstype, false)
+    },
+
+    //跳转到新闻详情页
+    viewDetail: function(e) {
+        let newsUrl = e.currentTarget.dataset.newsurl || ''
+        let newsTitle = e.currentTarget.dataset.newstitle || ''
+        let newsAuthor = e.currentTarget.dataset.newsauthor || ''
+        wx.navigateTo({
+            url: '../detail/detail?newsUrl=' + newsUrl
+        })
+    },
+
+    handleSwiperChange: function(e) {
+        this.setData({
+            swiperIndex: `${e.detail.current + 1}/4`
+        })
+    },
+
+    onPulldownrefresh_SV() {
+        this.renderPage('top', true, () => {
+            this.setData({
+                refreshing: false
+            })
+        })
+    },
+    // isRefresh 是否为下拉刷新
+    renderPage: function(newsType, isRefresh, calllBack) {
+        if (!isRefresh) {
+            wx.showLoading({
+                title: '加载中'
+            })
+            request({
+                    url: `https://v.juhe.cn/toutiao/index?type=${newsType}&key=${appKey}`,
+                    newstype: newsType
+                })
+                .then(res => {
+                    wx.hideLoading()
+                    let {
+                        articleList,
+                        topPic
+                    } = extractArticleInfo(res.result.data)
+                    this.setData({
+                        contentNewsList: articleList,
+                        /*             topPic */
+                    })
+                    if (calllBack) {
+                        calllBack()
+                    }
+                })
+                .catch(error => {
+                    wx.hideLoading()
+                }),
+                request({
+                    url: 'http://47.100.92.120:8080/image/carouse',
+                    method: 'GET',
+                }).then(res => {
+                    console.log('res', res)
+                    /*                     this.setData({
+                                            topPic:res.data
+                                        }) */
+                })
+        } else {
+            // 数组随机排序，模拟刷新
+            let contentNewsListTemp = shuffle(JSON.parse(JSON.stringify(this.data.contentNewsList)))
+            /* contentNewsListTemp.sort(() => {
+              return Math.random() > 0.5 ? -1 : 1
+            }) */
+            setTimeout(() => {
+                this.setData({
+                    contentNewsList: contentNewsListTemp
+                })
+                if (calllBack) {
+                    calllBack()
+                }
+            }, 2000)
+        }
+    }
+})
