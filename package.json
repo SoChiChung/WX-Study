@@ -12,6 +12,7 @@
   "dependencies": {
     "@types/node": "^12.12.17",
     "@types/weixin-app": "^2.2.28",
+    "mddir": "^1.1.1",
     "miniprogram-api-typings": "^2.8.3-1",
     "typescript": "^3.3.3333",
     "weui-miniprogram": "^0.3.0"

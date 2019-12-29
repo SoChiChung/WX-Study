@@ -1,14 +1,14 @@
 {
     "pages": [
         "pages/scancode/scancode",
-        "pages/map/map",
         "pages/index/index",
-        "pages/logs/logs",
         "pages/txmap/txmap",
+        "pages/userinfo/userinfo",
+        "pages/logs/logs",
         "pages/qrcode/qrcode",
         "pages/account-setting/account-setting",
         "pages/detail/detail",
-        "pages/userinfo/userinfo",
+        "pages/map/map",
         "pages/webview/webview"
     ],
     "window": {

@@ -1,2 +1,3 @@
 <!--miniprogram/pages/txmap/txppage.wxml-->
 <!-- <text>miniprogram/pages/txmap/txppage.wxml</text> -->
+<button bindtap="jumptomap">跳向地图</button>
