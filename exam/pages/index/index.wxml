@@ -1,0 +1,14 @@
+<!--exam/pages/index/index.wxml-->
+<view class="container">
+    <image class="" src="cloud://gdutexam-wzdlh.6764-gdutexam-wzdlh-1300398457/images/exam/logo.jpg" lazy-load="true"
+        mode="aspectFit" binderror="" bindload="" class="logo">
+    </image>
+    <image class="" src="cloud://gdutexam-wzdlh.6764-gdutexam-wzdlh-1300398457/images/exam/exam_banner.jpg"
+        lazy-load="true" binderror="" bindload="" mode="aspectFit">
+    </image>
+    <view class="container-view">
+        <text>你好，{{username}}同学</text>
+        <input type="text" type="number"  placeholder="请输入六位考试码" class="container-view-text"></input>
+    </view>
+    <button class="container-btn">开始考试</button>
+</view>

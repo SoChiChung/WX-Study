@@ -1,0 +1,2 @@
+<!--pages/index/index.wxml-->
+<button bindtap="jumptoexam">考试</button>

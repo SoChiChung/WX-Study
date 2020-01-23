@@ -1,0 +1,27 @@
+/* exam/pages/index/index.wxss */
+
+
+.container {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    height: 200rpx;
+}
+
+.container-view {
+    margin-top: 100rpx;
+    text-align: left;
+}
+
+.container-view input {
+    border: 1rpx solid black;
+    margin-bottom: 50rpx;
+}
+
+.container-btn {
+    color: white;
+    background-color: red;
+}
