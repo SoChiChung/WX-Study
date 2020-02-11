@@ -10,5 +10,5 @@
         <text>你好，{{username}}同学</text>
         <input type="text" type="number"  placeholder="请输入六位考试码" class="container-view-text"></input>
     </view>
-    <button class="container-btn">开始考试</button>
+    <button class="container-btn" bindtap="jumptostart">开始考试</button>
 </view>

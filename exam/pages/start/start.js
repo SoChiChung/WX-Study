@@ -1,24 +1,28 @@
-// exam/pages/index/index.js
+// exam/pages/start/start.js
+const {exam}=require('../../../data/demo.js')
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        username:"卢本伟"
+        exam:exam,
+        questions:exam.ques.questions,
+        cqi:0,//cur ques index 当前大题序号
+        cti:0,// cur topic index 当前小题序号
     },
-    //跳到试题首页
-    jumptostart(){
-        wx.showLoading({
-            title: '请稍候...',
-        })
+    jumptoques(){
         wx.navigateTo({
-            url: '../start/start',
-            fail:(err)=>{
+            url: '../ques/ques',
+            success: function(res){
+                // success
+            },
+            fail: function(err) {
+                // fail
                 console.log(err)
             },
-            complete:function(){
-                wx.hideLoading()
+            complete: function() {
+                // complete
             }
         })
     },
@@ -26,7 +30,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        console.log(this.data.exam)
     },
 
     /**

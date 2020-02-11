@@ -6,14 +6,16 @@
         {
             "root": "exam",
             "pages": [
-                "pages/index/index"
+                "pages/index/index",
+                "pages/start/start",
+                "pages/ques/ques"
             ]
         }
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarTitleText": "广东工业大学在线考试",
         "navigationBarTextStyle": "black"
     },
     "style": "v2",

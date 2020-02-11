@@ -1,0 +1,39 @@
+<!--exam/pages/ques/ques.wxml-->
+<!-- 题目 -->
+<view class="ques-box">
+    <p>{{questions[cqi].name}}</p>
+    <p>{{cti+1}}/{{questions[cqi].topics_num}}</p>
+    <p>{{topics[cti].topic_info}}</p>
+</view>
+<!-- 底部工具栏 -->
+<view class="bottom">
+    <text wx:if="{{(cqi|cti)}}" bindtap="jumptoPrev">上一题</text>
+    <text wx:else decode="{{true}}">&emsp;&emsp;&emsp;</text>
+    <view class="icon-box">
+        <image class="" src="/images/shouye.png">
+        </image>
+        <text>
+            首页
+        </text>
+    </view>
+    <view class="icon-box">
+        <image class="" src="/images/datika.png">
+        </image>
+        <text>
+            答题卡
+        </text>
+    </view>
+    <view class="time-item">
+        <text class="time-item"> 倒计时:</text>
+        <text class="time_show">{{countDownHour}}</text>
+        时
+        <text class="time_show">{{countDownMinute}}</text>
+        分
+        <text class="time_show">{{countDownSecond}}</text>
+        秒
+
+    </view>
+
+    <text wx:if="{{!(cqi==ques.length-1&&cti==ques[cqi].length-1)}}" bindtap="jumptoNext">下一题</text>
+    <text wx:else decode="{{true}}">&emsp;&emsp;&emsp;</text>
+</view>

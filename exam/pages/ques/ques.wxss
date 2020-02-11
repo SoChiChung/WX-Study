@@ -1,0 +1,45 @@
+/* exam/pages/ques/ques.wxss */
+page {
+    position: relative;
+    height: 100%;
+}
+
+p {
+    display: block;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    height: 100rpx;
+    background-color: red;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10rpx;
+    justify-content: space-around;
+    font-size: 25rpx;
+}
+
+.time-item {
+    color: white;
+}
+
+.bottom text {
+    color: white;
+}
+
+.icon-box {
+    text-align: center;
+    display: inline-block;
+}
+
+.icon-box image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.icon-box text {
+    font-size: 30rpx;
+    /* color: white; */
+}

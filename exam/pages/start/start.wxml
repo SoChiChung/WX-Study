@@ -1,0 +1,13 @@
+<!--exam/pages/start/start.wxml-->
+<view id="container">
+    <text class="title">{{exam.name}}</text>
+    <view class="time-box" hover-class="none" hover-stop-propagation="false">
+        <text class="time">考试日期：{{exam.exam_date}} </text>
+        <text class="time">考试时间：{{exam.start_time}} ——— {{exam.end_time}}</text>
+    </view>
+    <view class="info-box">
+        <rich-text class="" nodes="{{exam.ques.info}}">
+        </rich-text>
+    </view>
+    <button class="container-btn" bindtap="jumptoques">开始考试 </button>
+</view>
