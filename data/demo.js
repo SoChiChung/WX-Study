@@ -16,28 +16,82 @@ const exam = {
                     {
                         topic_index: "1",
                         topic_info: "我是题目我是题目我是题目我是题目我是题目我是题目我是题目我是题目我是题目我是题目我是题目我是题目",
-                        selections: ["a选项", "b选项", "c选项"]
+                        selections: [
+                            {
+                                index:'A',
+                                desc:'这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A这题选A'
+                            },
+                            {
+                                index:'B',
+                                desc:'这题选B'
+                            },
+                            {
+                                index:'C',
+                                desc:'这题选C'
+                            },
+                            {
+                                index:'D',
+                                desc:'这题选D'
+                            },
+                        ]
                     },
                     {
                         topic_index: "2",
                         topic_info: "我是题目2我是题目2我是题目2",
-                        selections: ["a选项", "b选项", "c选项"]
+                        selections: [
+                            {
+                                index:'A',
+                                desc:'这题选A'
+                            },
+                            {
+                                index:'B',
+                                desc:'这题选B'
+                            },
+                            {
+                                index:'C',
+                                desc:'这题选C'
+                            },
+                            {
+                                index:'D',
+                                desc:'这题选D'
+                            },
+                        ]
                     }
                 ]
             },
             { //考试题目（大题）
                 info: "", //大题描述
                 name: "判断题(每题2分)",
-                topics_num: "", //小题数
+                topics_num: "15", //小题数
                 topics_type: 3, //题目类型 1单选 2 多选 3判断
                 topics: [ //小题
                     {
                         topic_index: "1",
-                        topic_info: "",
+                        topic_info: "我是判断题1",
+                        selections:[
+                            {
+                                index:'1',
+                                desc:'对'
+                            },
+                            {
+                                index:'0',
+                                desc:'错'
+                            },
+                        ]
                     },
                     {
                         topic_index: "2",
-                        topic_info: "",
+                        topic_info: "我是判断题2",
+                        selections:[
+                            {
+                                index:'1',
+                                desc:'对'
+                            },
+                            {
+                                index:'0',
+                                desc:'错'
+                            },
+                        ]
                     }
                 ]
             }

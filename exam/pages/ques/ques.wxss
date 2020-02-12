@@ -43,3 +43,30 @@ p {
     font-size: 30rpx;
     /* color: white; */
 }
+
+.ques-box {
+    padding: 0 10rpx;
+}
+
+.selection-box {
+    margin-top: 40rpx;
+    overflow-y: scroll;
+    padding: 0 10rpx;
+}
+
+radio {
+    display: block;
+    margin-top: 20rpx;
+}
+
+radio .wx-radio-input {
+    min-width: 40rpx;
+    min-height: 40rpx;
+    border: 4rpx solid red;
+    border-radius: 100%;
+    background: none;
+}
+
+radio text {
+    display: block;
+}

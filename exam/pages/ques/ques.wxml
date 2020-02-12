@@ -5,6 +5,13 @@
     <p>{{cti+1}}/{{questions[cqi].topics_num}}</p>
     <p>{{topics[cti].topic_info}}</p>
 </view>
+<view class="selection-box">
+    <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" wx:for-items="{{topics[cti].selections}}" wx:key="index" value="{{item.index}}">
+            <text>{{item.desc}}</text>
+        </radio>
+    </radio-group>
+</view>
 <!-- 底部工具栏 -->
 <view class="bottom">
     <text wx:if="{{(cqi|cti)}}" bindtap="jumptoPrev">上一题</text>
